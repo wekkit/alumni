@@ -103,7 +103,7 @@
       "previewImage": "http://i.giphy.com/3o6YgjqNoCkatTgSKQ.gif"
     },
     "project2": {
-      "repoName": "project-2-starter",
+      "repoName": "cue",
       "deployedUrl": "https://cueup.herokuapp.com/",
       "previewImage":"http://i.giphy.com/26xBMULV4KRLGaHM4.gif"
     },
@@ -232,7 +232,7 @@
     "githubLogin": "AhGuGu",
     "project1": {
       "repoName": "WDI_project_1",
-      "deployedUrl": "",
+      "deployedUrl": ""
     },
     "project2": {
       "repoName": "WDI_project_2",
@@ -253,7 +253,7 @@
     },
     "project2": {
       "repoName": "project-2-starter",
-      "deployedUrl": "https://homeworkmanager.herokuapp.com/",
+      "deployedUrl": "https://homeworkmanager.herokuapp.com/"
     },
     "project3": {
       "repoName": "fleamarket",
@@ -270,7 +270,12 @@
     },
     "project2": {
       "repoName": "signoff",
-      "deployedUrl": "https://signoffdh.herokuapp.com",
+      "deployedUrl": "https://signoffdh.herokuapp.com"
+    },
+    "project3": {
+      "repoName": "fleamarket",
+      "deployedUrl": "https://fleastarter.herokuapp.com",
+      "collaborators": ["EstherLow", "Sharan Kaur"]
     }
   }
 ]

@@ -1,21 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import * as data from './data.json'
+import Card from './components/Card'
+import './App.css'
 
-class App extends Component {
+export class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: data.default
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='container'>
+      <h1>This is WDI7.</h1>
+      <div className='card-deck'>
+          {this.state.data.map((elem, i) => {
+            return (
+              <Card key={i} person={elem} />
+            )
+          })}
       </div>
-    );
+      </div>
+    )
   }
 }
+
 
 export default App;
