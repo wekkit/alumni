@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 
-class Card extends Component {
+class DeveloperCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -21,7 +21,7 @@ class Card extends Component {
 
   render() {
     return (
-      <div className='card' value={this.props.person.githubLogin} onClick={this.props.onClick}>
+      <div className='card card-developer' value={this.props.person.githubLogin} onClick={this.props.onClick}>
         <img src={this.state.githubInfo.avatar_url} id={this.state.githubInfo.login} alt='' className='card-img-top'></img>
         <div className='card-block'>
           <div className='card-title'><h2>{this.props.person.githubLogin}</h2></div>
@@ -36,4 +36,4 @@ class Card extends Component {
   }
 }
 
-export default Card
+export default DeveloperCard

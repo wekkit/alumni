@@ -2,24 +2,12 @@ import React, { Component } from 'react'
 
 class RepoLink extends Component {
   render() {
-    if (this.props.project.previewImage) {
-      return(
-        <a href={this.props.project.deployedUrl} target='_blank'>
+      return (
         <div className='card mx-auto'>
-          <p className='card-header'>{this.props.header}: {this.props.project.repoName}</p>
-          <img src={this.props.project.previewImage} alt='Not found' className='img-thumbnail' />
+          <a href={this.props.project.deployedUrl} target='_blank' className='card-header'>{this.props.header}: {this.props.project.repoName}</a>
+          {this.props.project.previewImage && <img src={this.props.project.previewImage} alt='Not found' className='img-thumbnail' />}
         </div>
-        </a>
       )
-    } else {
-      return(
-        <a href={this.props.project.deployedUrl} target='_blank'>
-        <div className='card mx-auto'>
-          <p className='card-header'>{this.props.header}: {this.props.project.repoName}</p>
-        </div>
-        </a>
-      )
-    }
   }
 }
 

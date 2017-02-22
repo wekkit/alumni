@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import * as data from '../data.json'
-import Card from './Card'
+import DeveloperCard from './DeveloperCard'
 import Profile from './Profile'
 import '../App.css'
-import '../bg.css'
 
 class DevelopersView extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class DevelopersView extends Component {
       users: data.default.map(e => {
                 return e.githubLogin
               }),
-      profileUser: data.default[0]
+      profileUser: data.default[5]
     }
   }
 
@@ -32,18 +32,18 @@ class DevelopersView extends Component {
   }
 
   render() {
-    // <Filters data={this.state.users} changeHandler={this.filter.bind(this)} />
     return (
       <div className='container'>
         <div className='row'>
           <div className='col-md-7 scroll-section'>
             <hr/>
             <h1>This is WDI7.</h1>
+            <Link to="/projects" className='btn btn-primary'>View Projects</Link>
             <hr/>
             <div className='card-deck'>
               {this.state.data.map((elem, i) => {
                 return (
-                  <Card key={i} person={elem} onClick={this.cardClickHandler.bind(this)}/>
+                  <DeveloperCard key={i} person={elem} onClick={this.cardClickHandler.bind(this)}/>
                 )
               })}
             </div>

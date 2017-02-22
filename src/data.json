@@ -52,7 +52,7 @@
     "project3": {
       "repoName": "project-sporting",
       "deployedUrl": "http://sporting-sg.herokuapp.com/",
-      "collaborators": ["chengkoon", "tomatokenji", "thisisdax"]
+      "collaborators": ["chengkoon", "tomatokenji"]
     }
   },
   {
@@ -80,8 +80,7 @@
    "githubLogin": "yisheng90",
    "project1": {
      "repoName": "GA-Project-1-The-Exploding-Kitten-",
-     "deployedUrl": "https://yisheng90.github.io/GA-Project-1-The-Exploding-Kitten-/",
-     "previewImage": "https://github.com/yisheng90/GA-Project-1-The-Exploding-Kitten-.git"
+     "deployedUrl": "https://yisheng90.github.io/GA-Project-1-The-Exploding-Kitten-/"
    },
    "project2": {
      "repoName": "Kakis",
@@ -165,7 +164,7 @@
       "repoName": "WDI-Project3-WhereWork",
       "deployedUrl": "https://wherework.herokuapp.com/",
       "previewImage": "http://i.imgur.com/ZQktxgY.png",
-      "collaborators": ["adrianke77", "benedictkohtc", "wekkit", "melvinthemok"]
+      "collaborators": ["adrianke77", "benedictkohtc", "wekkit"]
     }
   },
   {
@@ -184,7 +183,7 @@
     "project3": {
       "repoName": "cavacado/third-project",
       "deployedUrl": "https://floating-retreat-48742.herokuapp.com/",
-      "collaborators": ["cavacado", "AndrewThian", "sharona1610", "yisheng90"]
+      "collaborators": ["AndrewThian", "sharona1610", "yisheng90"]
     }
   },
   {
@@ -204,7 +203,7 @@
       "repoName": "WDI-Project3-WhereWork",
       "deployedUrl": "http://wherework.herokuapp.com/",
       "previewImage": "https://i.imgur.com/9MY4VFy.png",
-      "collaborators": ["adrian", "keith","melvin"]
+      "collaborators": ["adrianke77", "wekkit","melvinthemok"]
     }
   },
   {
@@ -257,7 +256,7 @@
     "project3": {
       "repoName": "fleamarket",
       "deployedUrl": "https://fleastarter.herokuapp.com",
-      "collaborators": ["Danial Harris", "Sharan Kaur"]
+      "collaborators": ["danialhr", "sharanvkaur"]
     }
   },
   {
@@ -274,7 +273,7 @@
     "project3": {
       "repoName": "fleamarket",
       "deployedUrl": "https://fleastarter.herokuapp.com",
-      "collaborators": ["EstherLow", "Sharan Kaur"]
+      "collaborators": ["EstherLow", "sharanvkaur"]
     }
   }
 ]

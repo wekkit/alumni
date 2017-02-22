@@ -37,6 +37,6 @@
   overflow: scroll;
 }
 
-.card-img-top {
+.card-developer .card-img-top {
   cursor: pointer;
 }
