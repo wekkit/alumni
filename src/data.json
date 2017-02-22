@@ -4,8 +4,7 @@
     "githubLogin": "jeremiahalex",
     "project1": {
       "repoName": "project-1",
-      "deployedUrl": "http://jeremiah.sg",
-      "previewImage": "http://some-cdn.link/image.gif"
+      "deployedUrl": "http://jeremiah.sg"
     },
     "project2": {
       "repoName": "project-2",
@@ -110,6 +109,7 @@
     "project3": {
       "repoName": "WDI-Project3-WhereWork",
       "deployedUrl": "http://wherework.herokuapp.com/",
+      "previewImage": "http://i.imgur.com/LNu8GWD.png",
       "collaborators": ["adrianke77", "melvinthemok", "benedictkohtc"]
     }
   },
@@ -136,12 +136,11 @@
     "project1": {
       "repoName": "space_invaders_clone",
       "deployedUrl": "https://andrewthian.github.io/space_invaders_clone/",
-      "previewImage": "http://gph.is/2kwbDlC"
+      "previewImage": "https://media.giphy.com/media/26xBQIlFDOCfPfTZ6/giphy.gif"
     },
     "project2": {
       "repoName": "habitica_clone",
-      "deployedUrl": "https://turd-doo-app.herokuapp.com/",
-      "previewImage": "http://imgur.com/zyOhQsA"
+      "deployedUrl": "https://turd-doo-app.herokuapp.com/"
     },
     "project3": {
       "repoName": "cavacado/third-project",
@@ -175,12 +174,12 @@
     "project1": {
       "repoName": "poc",
       "deployedUrl": "https://github.com/cavacado/poc",
-      "previewImage": "http://gph.is/2kELP1H"
+      "previewImage": "https://media.giphy.com/media/MyDkyZk69q5uE/giphy.gif"
     },
     "project2": {
       "repoName": "mmb",
       "deployedUrl": "https://github.com/cavacado/mmb",
-      "previewImage": "http://gph.is/2kZ9Uns"
+      "previewImage": "https://media.giphy.com/media/11MIeie4lxfdjW/giphy.gif"
     },
     "project3": {
       "repoName": "cavacado/third-project",
@@ -214,12 +213,12 @@
     "project1": {
       "repoName": "game",
       "deployedUrl": "https://sharona1610.github.io/",
-      "previewImage": "http://gph.is/2l9xSfJ"
+      "previewImage": "https://media.giphy.com/media/DzDmGTE4ZRtuw/giphy.gif"
     },
     "project2": {
       "repoName": "project-2-starter",
       "deployedUrl": "https://buszwatch.herokuapp.com/",
-      "previewImage": "http://gph.is/2ljuhKm"
+      "previewImage": "https://media.giphy.com/media/TBL1cvkkH4fKg/giphy.gif"
     },
     "project3": {
       "repoName": "cavacado/third-project",

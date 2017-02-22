@@ -1,5 +1,15 @@
 .container {
-  margin: 20px;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .card {
@@ -10,4 +20,23 @@
 
 .card-img-top {
   width: 100%;
+}
+
+#profile {
+  width: 100%;
+  margin: 0;
+}
+
+.pane {
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-section {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.card-img-top {
+  cursor: pointer;
 }

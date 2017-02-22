@@ -1,15 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 
-class RepoLink extends Component {
-  render() {
-    return(
-      <a href={this.props.project.deployedUrl} target='_blank'><p className='card-text'>{this.props.project.repoName}</p></a>
-    )
-  }
-}
-
-export class Card extends Component {
+class Card extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -29,17 +21,14 @@ export class Card extends Component {
 
   render() {
     return (
-      <div className='card'>
-        <img src={this.state.githubInfo.avatar_url} alt='' className='card-img-top img-responsive center-block'></img>
+      <div className='card' value={this.props.person.githubLogin} onClick={this.props.onClick}>
+        <img src={this.state.githubInfo.avatar_url} id={this.state.githubInfo.login} alt='' className='card-img-top'></img>
         <div className='card-block'>
           <div className='card-title'><h2>{this.props.person.githubLogin}</h2></div>
           <p className='card-text'>{this.state.githubInfo.name}</p>
-          <RepoLink project={this.props.person.project1} />
-          <RepoLink project={this.props.person.project2} />
-          <RepoLink project={this.props.person.project3} />
         </div>
         <div className='card-footer'>
-          <a href={this.state.githubInfo.url}><small className='text-muted'>View Github profile</small></a><br/>
+          <a href={this.state.githubInfo.html_url}><small className='text-muted'>View Github profile</small></a><br/>
           <a href={this.state.githubInfo.blog}><small className='text-muted'>View blog</small></a>
         </div>
       </div>
