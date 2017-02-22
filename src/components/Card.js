@@ -39,8 +39,8 @@ export class Card extends Component {
           <RepoLink project={this.props.person.project3} />
         </div>
         <div className='card-footer'>
-          <a href={this.state.githubInfo.url}><small class='text-muted'>View Github profile</small></a><br/>
-          <a href={this.state.githubInfo.blog}><small class='text-muted'>View blog</small></a>
+          <a href={this.state.githubInfo.url}><small className='text-muted'>View Github profile</small></a><br/>
+          <a href={this.state.githubInfo.blog}><small className='text-muted'>View blog</small></a>
         </div>
       </div>
     )

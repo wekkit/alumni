@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as data from './data.json'
 import Card from './components/Card'
 import './App.css'
+import './bg.css'
 
 export class App extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ export class App extends Component {
     return (
       <div className='container'>
       <h1>This is WDI7.</h1>
+      <hr/>
       <div className='card-deck'>
           {this.state.data.map((elem, i) => {
             return (
