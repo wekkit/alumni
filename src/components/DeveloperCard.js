@@ -29,7 +29,7 @@ class DeveloperCard extends Component {
         </div>
         <div className='card-footer'>
           <a href={this.state.githubInfo.html_url}><small className='text-muted'>View Github profile</small></a><br/>
-          <a href={this.state.githubInfo.blog}><small className='text-muted'>View blog</small></a>
+          {this.state.githubInfo.blog && <a href={this.state.githubInfo.blog}><small className='text-muted'>View blog</small></a>}
         </div>
       </div>
     )

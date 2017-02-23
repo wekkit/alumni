@@ -10,14 +10,7 @@ class DevelopersView extends Component {
     super(props)
     this.state = {
       data: data.default,
-      filters: data.default.reduce((accum, e) => {
-                  accum.push(e.githubLogin)
-                  return accum
-                }, []),
-      users: data.default.map(e => {
-                return e.githubLogin
-              }),
-      profileUser: data.default[5]
+      profileUser: null
     }
   }
 
@@ -35,6 +28,7 @@ class DevelopersView extends Component {
     return (
       <div className='container'>
         <div className='row'>
+
           <div className='col-md-7 scroll-section'>
             <hr/>
             <h1>This is WDI7.</h1>
@@ -43,7 +37,7 @@ class DevelopersView extends Component {
             <div className='card-deck'>
               {this.state.data.map((elem, i) => {
                 return (
-                  <DeveloperCard key={i} person={elem} onClick={this.cardClickHandler.bind(this)}/>
+                  <DeveloperCard key={i} person={elem} onClick={this.cardClickHandler.bind(this)} />
                 )
               })}
             </div>

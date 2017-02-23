@@ -6,12 +6,17 @@ class Filters extends Component {
     return (
       <div className='card scroll-section' id='profile'>
         <div className='card-block'>
+          <h3>Search</h3>
+          <div className="input-group">
+            <input type="text" className="form-control" placeholder="Search project name..." onChange={this.props.searchHandler} />
+          </div>
+          <hr />
           <h3>Filters</h3>
-          <hr/>
+
           <form onChange={this.props.filterHandler}>
            <div className="checkbox">
              <label>
-               <input type="checkbox" value={1}  defaultChecked/> Project 1
+               <input type="checkbox" value={1} defaultChecked/> Project 1
              </label>
            </div>
            <div className="checkbox">

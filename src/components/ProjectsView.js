@@ -38,7 +38,8 @@ class ProjectsView extends Component {
     super(props)
     this.state = {
       projectData: projectData,
-      projectFilter: []
+      projectFilter: [],
+      projectSearch: ''
     }
   }
 
@@ -54,27 +55,43 @@ class ProjectsView extends Component {
     this.setState({
       projectFilter: newFilter
     })
-    let newData = projectData
+    let filteredData = projectData.filter(data => {
+      return data.repoName.toLowerCase().includes(this.state.projectSearch.toLowerCase())
+    })
     for (let i = 0; i < this.state.projectFilter.length; i++) {
-      newData = newData.filter((elem) => {
+      filteredData = filteredData.filter((elem) => {
         if (elem.project === this.state.projectFilter[i]) return false
         else return true
       })
     }
     this.setState({
-      projectData: newData
+      projectData: filteredData
     })
+  }
+
+  searchHandler(e) {
+    this.setState({ projectSearch: e.target.value })
+    let filteredData = projectData.filter(data => {
+      return data.repoName.toLowerCase().includes(e.target.value.toLowerCase())
+    })
+    for (let i = 0; i < this.state.projectFilter.length; i++) {
+      filteredData = filteredData.filter((elem) => {
+        if (elem.project === this.state.projectFilter[i]) return false
+        else return true
+      })
+    }
+    this.setState({ projectData: filteredData })
   }
 
   render() {
     return (
       <div className='container'>
         <div className='row'>
-          <div className='col-md-2 pane'>
-            <Filters filterHandler={this.filterHandler.bind(this)} />
+          <div className='col-md-3 pane'>
+            <Filters filterHandler={this.filterHandler.bind(this)} searchHandler={this.searchHandler.bind(this)}/>
           </div>
 
-          <div className='col-md-10 scroll-section'>
+          <div className='col-md-9 scroll-section'>
             <hr/>
             <h1>These are WDI7's projects.</h1>
             <IndexLink to='/' className='btn btn-primary'>View Developers</IndexLink>

@@ -15,13 +15,13 @@ class Profile extends Component {
   render() {
     return (
       <div className='card scroll-section' id='profile'>
-        <div className='card-block'>
+        {this.props.data && <div className='card-block'>
           <h1>{this.props.data.githubLogin}</h1>
           <hr/>
           <RepoLink project={this.props.data.project1} header='Project 1' />
           <RepoLink project={this.props.data.project2} header='Project 2' />
           <RepoLink project={this.props.data.project3} header='Project 3' />
-        </div>
+        </div>}
       </div>
     )
   }
