@@ -1,4 +1,18 @@
 import React, { Component } from 'react'
+import Remarkable from 'remarkable'
+let md = new Remarkable()
+
+class Readme extends Component {
+  render() {
+    if (this.props.selectedProject.readme) {
+      let markdown = {__html: md.render(this.props.selectedProject.readme)}
+      return <div dangerouslySetInnerHTML={markdown} ></div>
+    } else {
+      return null
+    }
+  }
+}
+
 
 class Filters extends Component {
 
@@ -30,6 +44,8 @@ class Filters extends Component {
              </label>
            </div>
           </form>
+          <hr />
+          <Readme selectedProject={this.props.selectedProject} />
         </div>
       </div>
     )

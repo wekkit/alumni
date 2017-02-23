@@ -3,6 +3,7 @@ import { IndexLink } from 'react-router'
 import * as data from '../data.json'
 import Filters from './Filters'
 import ProjectCard from './ProjectCard'
+import $ from 'jquery'
 
 let duplicateCheck = []
 const projectData = data.default.reduce((accum, elem) => {
@@ -39,7 +40,8 @@ class ProjectsView extends Component {
     this.state = {
       projectData: projectData,
       projectFilter: [],
-      projectSearch: ''
+      projectSearch: '',
+      selectedProject: projectData[4]
     }
   }
 
@@ -83,22 +85,57 @@ class ProjectsView extends Component {
     this.setState({ projectData: filteredData })
   }
 
+  clickHandler(e) {
+    const clickedProject = JSON.parse(e.target.id)
+    if (clickedProject.project !==  3) {
+      $.get('https://api.github.com/repos/'+ clickedProject.creator + '/' + clickedProject.repoName + '/readme?access_token=beb047469c874159724f9f479ab184ce22d9a164')
+        .done((data) => {
+          $.get(data.download_url)
+            .done(readme => {
+              clickedProject.readme = readme
+              this.setState({
+                selectedProject: clickedProject
+              })
+            })
+        })
+    } else {
+      $.get('https://api.github.com/repos/'+ clickedProject.creator.split(',')[0] + '/' + clickedProject.repoName + '/readme?access_token=beb047469c874159724f9f479ab184ce22d9a164')
+        .done((data) => {
+          $.get(data.download_url)
+            .done(readme => {
+              clickedProject.readme = readme
+              this.setState({
+                selectedProject: clickedProject
+              })
+            })
+        })
+    }
+  }
+
   render() {
     return (
       <div className='container'>
         <div className='row'>
-          <div className='col-md-3 pane'>
-            <Filters filterHandler={this.filterHandler.bind(this)} searchHandler={this.searchHandler.bind(this)}/>
+          <div className='col-md-5 pane'>
+            <Filters
+              filterHandler={this.filterHandler.bind(this)}
+              searchHandler={this.searchHandler.bind(this)}
+              selectedProject={this.state.selectedProject}
+            />
           </div>
 
-          <div className='col-md-9 scroll-section'>
+          <div className='col-md-7 scroll-section'>
             <hr/>
             <h1>These are WDI7's projects.</h1>
             <IndexLink to='/' className='btn btn-primary'>View Developers</IndexLink>
             <hr/>
             <div className='card-columns'>
               {this.state.projectData.map((elem, i) => {
-                return <ProjectCard project={elem} key={i} />
+                return <ProjectCard
+                          project={elem}
+                          key={i}
+                          clickHandler={this.clickHandler.bind(this)}
+                        />
               })}
             </div>
           </div>

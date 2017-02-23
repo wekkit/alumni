@@ -1,35 +1,36 @@
 import React, { Component } from 'react'
-// import $ from 'jquery'
+import $ from 'jquery'
 
 class ProjectCard extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     imageUrl: ''
-  //   }
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      readme: ''
+    }
+  }
 
-  // componentDidMount() {
-  //   if (!this.props.project.previewImage) {
-  //     let githubUser = this.props.project.creator
-  //     if (this.props.project.project === 3) {
-  //       githubUser = this.props.project.creator.split(',')[0]
-  //     }
+  componentDidMount() {
 
-  //     $.get('https://api.github.com/users/'+ githubUser + '?access_token=beb047469c874159724f9f479ab184ce22d9a164')
-  //       .done((data) => {
-  //         this.setState({
-  //           imageUrl: data.avatar_url
-  //         })
-  //       })
-  //       .fail((err) => {console.log(err)})
-  //   }
-  // }
+  }
+
+  getReadme() {
+    if (this.props.project.project !==  3) {
+      $.get('https://api.github.com/repos/'+ this.props.project.creator + '/' + this.props.project.repoName + '/readme?access_token=beb047469c874159724f9f479ab184ce22d9a164')
+        .done((data) => {
+          $.get(data.download_url)
+            .done(readme => {
+              this.setState({
+                readme: readme
+              })
+            })
+        })
+    }
+  }
 
   render() {
       return (
           <div className='card card-project'>
-            <a href={this.props.project.deployedUrl} target='_blank'><h4 className='card-header'>{this.props.project.repoName}</h4></a>
+            <h4 className='card-header' style={{ cursor: 'pointer' }} onClick={this.props.clickHandler} id={JSON.stringify(this.props.project)}>{this.props.project.repoName}</h4>
             {this.props.project.previewImage && <img src={this.props.project.previewImage} alt='Not found' className='img-thumbnail' />}
             <div className='card-footer'>
               <p className='card-text'><small>Project {this.props.project.project} by {this.props.project.creator}</small></p>
