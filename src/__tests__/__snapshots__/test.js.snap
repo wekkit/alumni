@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an empty profile correctly 1`] = `
+<div
+  className="card scroll-section"
+  id="profile"
+/>
+`;

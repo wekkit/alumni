@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { IndexLink } from 'react-router'
+import $ from 'jquery'
+
 import * as data from '../data.json'
 import Filters from './Filters'
 import ProjectCard from './ProjectCard'
-import $ from 'jquery'
 
 let duplicateCheck = []
 const projectData = data.default.reduce((accum, elem) => {
@@ -33,7 +34,6 @@ const projectData = data.default.reduce((accum, elem) => {
         return accum
       }, [])
 
-
 class ProjectsView extends Component {
   constructor(props) {
     super(props)
@@ -41,7 +41,7 @@ class ProjectsView extends Component {
       projectData: projectData,
       projectFilter: [],
       projectSearch: '',
-      selectedProject: projectData[4]
+      selectedProject: null
     }
   }
 
@@ -129,15 +129,24 @@ class ProjectsView extends Component {
             <h1>These are WDI7's projects.</h1>
             <IndexLink to='/' className='btn btn-primary'>View Developers</IndexLink>
             <hr/>
+
+            {
+              (this.state.projectSearch.length > 0) &&
+                <p>Searching: {this.state.projectSearch}</p>
+            }
+
             <div className='card-columns'>
-              {this.state.projectData.map((elem, i) => {
-                return <ProjectCard
-                          project={elem}
-                          key={i}
-                          clickHandler={this.clickHandler.bind(this)}
-                        />
-              })}
+              {
+                this.state.projectData.map((elem, i) => {
+                  return <ProjectCard
+                            project={elem}
+                            key={i}
+                            clickHandler={this.clickHandler.bind(this)}
+                          />
+                })
+              }
             </div>
+
           </div>
         </div>
       </div>

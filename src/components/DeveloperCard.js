@@ -9,14 +9,13 @@ class DeveloperCard extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     $.get('https://api.github.com/users/'+ this.props.person.githubLogin + '?access_token=beb047469c874159724f9f479ab184ce22d9a164')
       .done((data) => {
         this.setState({
           githubInfo: data
         })
       })
-      .fail((err) => {console.log(err)})
   }
 
   render() {
