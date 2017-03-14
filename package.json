@@ -2,6 +2,7 @@
   "name": "alumni",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wekkit.github.io/alumni/",
   "devDependencies": {
     "babel-jest": "^19.0.0",
     "babel-preset-es2015": "^6.22.0",
